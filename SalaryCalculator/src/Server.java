@@ -67,10 +67,13 @@ class GameHandler extends Thread implements Protocol {
 
                 out.writeInt(HOURS);
                 out.flush();
-                hours = in.readInt();
+                hours = in.readDouble();
+                System.out.println(hours);
                 out.writeInt(WAGES);
                 out.flush();
-                wage = in.readInt();
+                wage = in.readDouble();
+                System.out.println(wage);
+                System.out.println();
 
                 initialSalary = (hours * wage) * 52;
 
@@ -78,7 +81,8 @@ class GameHandler extends Thread implements Protocol {
 
                 out.writeInt(INITSALARY);
                 out.flush();
-                initialSalary = in.readInt();
+                initialSalary = in.readDouble();
+                System.out.println(initialSalary);
 
             } else {
                 out.writeInt(DONE);

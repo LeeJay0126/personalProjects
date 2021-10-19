@@ -29,11 +29,11 @@ public class Client implements Protocol {
         out.writeInt(choice);
         out.flush();
 
-        int command = 0;
-        double wage = 0;
-        double hours = 0;
-        double initialSalary = 0;
-        String result = "";
+        int command;
+        double wage;
+        double hours;
+        double initialSalary;
+        String result;
 
         do{
             command = in.readInt();
@@ -64,8 +64,6 @@ public class Client implements Protocol {
             }
 
         } while(command != DONE);
-
-        System.out.println("Thank you for using Salary and Tax Calculator!");
 
     }
 } 
