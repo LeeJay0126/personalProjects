@@ -34,6 +34,7 @@ public class Client implements Protocol {
         double hours;
         double initialSalary;
         String result;
+        int validator = 0;
 
         do{
             command = in.readInt();
@@ -61,9 +62,12 @@ public class Client implements Protocol {
                     System.out.println(result);
                     out.writeInt(DONE);
                     out.flush();
+                case DONE:
+                    System.out.println("Thank you for using Salary/Tax Calculator!");
+                    validator = 1;
             }
 
-        } while(command != DONE);
+        } while(validator != 1);
 
     }
 } 

@@ -68,12 +68,9 @@ class GameHandler extends Thread implements Protocol {
                 out.writeInt(HOURS);
                 out.flush();
                 hours = in.readDouble();
-                System.out.println(hours);
                 out.writeInt(WAGES);
                 out.flush();
                 wage = in.readDouble();
-                System.out.println(wage);
-                System.out.println();
 
                 initialSalary = (hours * wage) * 52;
 
@@ -82,9 +79,9 @@ class GameHandler extends Thread implements Protocol {
                 out.writeInt(INITSALARY);
                 out.flush();
                 initialSalary = in.readDouble();
-                System.out.println(initialSalary);
 
             } else {
+                System.out.println("sam");
                 out.writeInt(DONE);
                 out.flush();
             }
@@ -102,8 +99,6 @@ class GameHandler extends Thread implements Protocol {
             } else {
                 federalTax = 49020 * 0.15 + 0.26 + (98040 - 49020) * 0.205 + (151978 - 98040) * 0.26 + (216511 - 151978) * 0.29 + (initialSalary - 216511) * 0.33;
             }
-
-            System.out.println(federalTax);
 
             if (initialSalary <= 42184) {
                 provincialTax = initialSalary * 0.0506;
@@ -128,9 +123,6 @@ class GameHandler extends Thread implements Protocol {
             df.format(provincialTax);
             df.format(federalTax);
             df.format(initialSalary);
-
-            System.out.println(provincialTax);
-            System.out.println(result);
 
             out.writeInt(RESULT);
             out.writeUTF("Your federal tax is : " + federalTax + " and your provincial tax is : " + provincialTax + " and your total income after tax deduction from your initial salary " + initialSalary + " is " + result);
