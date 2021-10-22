@@ -1,0 +1,10 @@
+BalanceGame(Java) Plan:
+
+1. make a csv file (or hard code) 64 league of legends characters.
+2. User picks a choice they like better and chosen item proceeds to next round.
+	How this will work is every rounds, new array will be created and chosen item will be added to the array 
+	which will be used for next round of balance game. This continues until array.length is <= 1.
+
+
+Also considering about adding different options to this program. Such as favourite hollywood star or heros from marvel movie. Or even favorite 
+online or mobile game.
