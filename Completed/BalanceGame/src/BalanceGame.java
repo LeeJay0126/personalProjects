@@ -12,6 +12,24 @@ public class BalanceGame {
 
         Scanner in = new Scanner(System.in);
 
+        System.out.println("Which balance game would you like to play? \n" +
+                "Enter 1 for League of Legends Favourite Champion \n" +
+                "Enter 2 for Favourite NBA player ");
+
+        int gameCode = Integer.parseInt(in.nextLine());
+        String filename = "";
+
+        if(gameCode == 1){
+            filename = "champions.csv";
+        }else if(gameCode == 2){
+            filename = "NBA.csv";
+        }else{
+            System.out.println("Please Enter a valid number! \n" +
+                    "League of Legends Champion balance game has been chosen automatically");
+            filename = "champions.csv";
+            gameCode = 1;
+        }
+
         System.out.println("How many rounds would you like to play in? \n" +
                 "Enter 1 for rounds of 16 \n" +
                 "Enter 2 for rounds of 32 \n" +
@@ -35,9 +53,9 @@ public class BalanceGame {
         }
 
         if(numberOfRounds != 0) {
-
-            csvReader(entireList, "champions.csv");
+            csvReader(entireList, filename);
             arrayAdder(entireList, array, numberOfRounds);
+
         }else{
             System.out.println("Invalid entry for number of rounds");
         }
@@ -45,7 +63,7 @@ public class BalanceGame {
 
         ArrayList<String> resultArray = new ArrayList<>();
 
-        resultArray = gamePlayer(array);
+        resultArray = gamePlayer(array, gameCode);
 
         for(int i = 0; i < resultArray.size(); i++){
             System.out.println("Your pick is: " + resultArray.get(i));
@@ -56,13 +74,22 @@ public class BalanceGame {
     }
 
     //recursive method until size of arraylist is 1
-    public static ArrayList<String> gamePlayer(ArrayList<String> array){
+    public static ArrayList<String> gamePlayer(ArrayList<String> array, int gameCode){
 
         Scanner in = new Scanner(System.in);
 
         if(array.size() == 1){
             return array;
         }
+
+        String Question;
+
+        if(gameCode == 1){
+            Question = "Which League of Legends Champion do you like more? \n";
+        }else{
+            Question = "Which NBA player do you like more? \n";
+        }
+
 
         if(array.size() == 2){
             System.out.println("Finals");
@@ -77,11 +104,11 @@ public class BalanceGame {
         String second;
         int choice;
 
-        for( int i = 0; i < array.size()-1; i += 2){
+        for( int i = 0; i < array.size(); i += 2){
             first = array.get(i);
             second = array.get(i+1);
 
-            System.out.println("Which League of Legends Champion do you like more? \n" +
+            System.out.println(Question +
                     "Enter 1 for " + first + "\n" +
                     "Enter 2 for " + second);
             choice = Integer.parseInt(in.nextLine());
@@ -93,7 +120,7 @@ public class BalanceGame {
             }
         }
 
-        return gamePlayer(newArray);
+        return gamePlayer(newArray, gameCode);
 
     }
 
