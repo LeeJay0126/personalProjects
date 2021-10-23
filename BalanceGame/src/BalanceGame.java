@@ -1,12 +1,11 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class BalanceGame {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
 
         ArrayList<String> array = new ArrayList<>();
         ArrayList<String> entireList = new ArrayList<>();
@@ -37,11 +36,64 @@ public class BalanceGame {
 
         if(numberOfRounds != 0) {
 
-            csvReader(entireList, "tempcsv.csv");
+            csvReader(entireList, "champions.csv");
             arrayAdder(entireList, array, numberOfRounds);
         }else{
             System.out.println("Invalid entry for number of rounds");
         }
+
+
+        ArrayList<String> resultArray = new ArrayList<>();
+
+        resultArray = gamePlayer(array);
+
+        for(int i = 0; i < resultArray.size(); i++){
+            System.out.println("Your pick is: " + resultArray.get(i));
+        }
+
+
+
+    }
+
+    //recursive method until size of arraylist is 1
+    public static ArrayList<String> gamePlayer(ArrayList<String> array){
+
+        Scanner in = new Scanner(System.in);
+
+        if(array.size() == 1){
+            return array;
+        }
+
+        if(array.size() == 2){
+            System.out.println("Finals");
+        }else if(array.size() == 4){
+            System.out.println("SemiFinals");
+        }else {
+            System.out.println("Round of " + array.size());
+        }
+
+        ArrayList<String> newArray = new ArrayList<>();
+        String first;
+        String second;
+        int choice;
+
+        for( int i = 0; i < array.size()-1; i += 2){
+            first = array.get(i);
+            second = array.get(i+1);
+
+            System.out.println("Which League of Legends Champion do you like more? \n" +
+                    "Enter 1 for " + first + "\n" +
+                    "Enter 2 for " + second);
+            choice = Integer.parseInt(in.nextLine());
+
+            if(choice == 1){
+                newArray.add(array.get(i));
+            }else{
+                newArray.add(array.get(i+1));
+            }
+        }
+
+        return gamePlayer(newArray);
 
     }
 
@@ -66,15 +118,18 @@ public class BalanceGame {
     }
 
     //
-    public static void csvReader(ArrayList<String> entireList, String filename) throws FileNotFoundException {
+    public static void csvReader(ArrayList<String> entireList, String filename) throws IOException {
 
-        Scanner sc = new Scanner(new File(filename));
+        File file = new File(filename);
+        FileInputStream ft = new FileInputStream(file);
 
-        sc.useDelimiter("\n");
+        DataInputStream in = new DataInputStream(ft);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String line;
 
         int i = 0;
-        while(sc.hasNext()){
-            entireList.add(i,sc.next());
+        while((line = br.readLine()) != null){
+            entireList.add(i,line);
             i++;
         }
 
