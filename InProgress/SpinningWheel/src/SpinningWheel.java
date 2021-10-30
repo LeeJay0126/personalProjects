@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -58,4 +60,16 @@ public class SpinningWheel extends Application {
         primaryStage.show();
 
     }
+
+    private class Adder implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(ActionEvent event) {
+            double radius = circle.getRadius();
+
+        }
+    }
+
 }
+
+
