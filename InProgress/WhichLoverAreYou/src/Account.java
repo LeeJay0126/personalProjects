@@ -3,14 +3,12 @@ public class Account {
     private String pw;
     private String name;
     private String email;
-    private String accessLevel;
 
-    public Account(String s, String id, String pw, String name, String email){
+    public Account(String id, String pw, String name, String email){
             this.id = id;
             this.pw = pw;
             this.name = name;
             this.email = email;
-            this.accessLevel = "CLIENT";
     }
 
     public String getId(){
@@ -27,10 +25,6 @@ public class Account {
 
     public String getName(){
         return name;
-    }
-
-    public void admin(){
-        this.accessLevel = "ADMIN";
     }
 
 }

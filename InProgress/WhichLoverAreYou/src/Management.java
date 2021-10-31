@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Management {
-    ArrayList <Account> userList;
+    private static ArrayList<Account> userList;
 
     public Management(){
         userList = new ArrayList<>();
@@ -16,20 +16,8 @@ public class Management {
         }
     }
 
-    public void makeAdmin(Account user){
-        user.admin();
-    }
-
-    public String findPw(String id){
-
-        for(int i = 0; i < userList.size();i++){
-            if(id == userList.get(i).getId()){
-                return userList.get(i).getPw();
-            }
-        }
-
-        return "Please Check Your ID again.";
-
+    public static ArrayList<Account> returnUserList(){
+        return userList;
     }
 
     public String findId(String email, String name){
