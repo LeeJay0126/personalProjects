@@ -1,74 +1,84 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
 
     Scanner in = new Scanner(System.in);
-    Management management = new Management();
-    ArrayList<Account> userList = management.returnUserList();
     Account loggedInUser = null;
+    private static adminAccount adminJay;
 
     public static void main(String[] args) throws IOException {
 
         main o = new main();
+        Management manage = new Management();
 
-        o.boot();
+        adminJay = new adminAccount("topaz1103", "Topaz1103@", "Jay Seung Yeon Lee", "topaz9889@gmail.com");
+        o.boot(manage);
+
+        if(!(manage.returnUserList().contains("topaz1103"))){
+            manage.addUser(adminJay);
+        }
+
+        adminJay.viewUsers();
 
         System.out.println("Welcome to WhichLoverAreYou!");
-        o.loginMenu();
+        o.loginMenu(manage);
 
 
 
     }
 
-    public void loginMenu() throws IOException {
+    public void loginMenu(Management manage) throws IOException {
         int login = 0;
 
         while(!(login == 1 || login == 2)) {
             System.out.println("Please enter 1 to create an account \n" +
                     "Enter 2 to log in.");
-            login = in.nextInt();
+            login = Integer.parseInt(in.nextLine());
 
             if(login != 1 || login != 2){
                 System.out.println("Please enter a 1 or 2 according to the direction");
             }
         }
 
-        if(login == 2){
-            createAccount();
+        if(login == 1){
+            createAccount(manage);
         }else{
             while(loggedInUser == null){
-                loggedInUser = login();
+                loggedInUser = login(manage);
             }
         }
     }
 
-    public Account login(){
+    public Account login(Management manage){
 
         System.out.println("Enter Your ID: ");
         String id = in.nextLine();
 
-        System.out.println("Enter Your Pw");
-        String PW = in.nextLine();
+        ArrayList<Account> userList = manage.returnUserList();
 
-        for(int i = 0; i < userList.size(); i++){
+        for(int i = 0; i < manage.returnUserList().size(); i++){
+
             if(userList.get(i).getId() == id){
+                System.out.println("Enter Your PW: ");
+                String PW = in.nextLine();
                 if(userList.get(i).getPw() == PW){
                     return userList.get(i);
                 }else{
                     System.out.println("Wrong password. Please try again");
                 }
-            }else{
-                System.out.println("Wrong ID. Please try again.");
             }
         }
+
+        System.out.println("Wrong ID. Please try again.");
 
         return null;
 
     }
 
-    public void createAccount() throws IOException {
+    public void createAccount(Management manage) throws IOException {
 
         System.out.println("Enter your full name including your first, middle, and last name: ");
         String name = in.nextLine();
@@ -82,8 +92,8 @@ public class main {
             System.out.println("Enter your desired id: ");
             id = in.nextLine();
 
-            for(int i = 0; i < management.returnUserList().size(); i ++){
-                if(management.returnUserList().get(i).getId() == id){
+            for(int i = 0; i < manage.returnUserList().size(); i ++){
+                if(manage.returnUserList().get(i).getId() == id){
                     System.out.println("ID is already in use. Please try a different ID.");
                 }else{
                     idValidation = true;
@@ -95,13 +105,13 @@ public class main {
         String PW = in.nextLine();
 
         Account newUser = new Account(id, PW, name, email);
-        addAccount(newUser);
+        addAccount(newUser, manage);
 
     }
 
-    public void addAccount(Account newUser) throws IOException {
+    public void addAccount(Account newUser, Management manage) throws IOException {
 
-        management.addUser(newUser);
+        manage.addUser(newUser);
 
         FileWriter writer = new FileWriter("userHistory.csv");
         writer.append(newUser.getId());
@@ -119,21 +129,16 @@ public class main {
 
     }
 
-    public void boot() throws IOException {
+    public void boot(Management manage) throws IOException {
 
         File userHistory = new File("userHistory.csv");
         if(userHistory.exists() && !userHistory.isDirectory()){
-            csvReader(userHistory);
-        }
-
-        adminAccount adminJay = new adminAccount("topaz1103", "Topaz1103@", "Jay Seung Yeon Lee", "topaz9889@gmail.com");
-        if(!(management.returnUserList().contains("topaz1103"))){
-            management.addUser(adminJay);
+            csvReader(userHistory, manage);
         }
 
     }
 
-    public void csvReader(File file) throws IOException {
+    public void csvReader(File file, Management manage) throws IOException {
 
         FileInputStream ft = new FileInputStream(file);
         DataInputStream dt = new DataInputStream(ft);
@@ -141,14 +146,13 @@ public class main {
         BufferedReader br = new BufferedReader(new InputStreamReader(dt));
         String line;
 
-        System.out.println("a");
-
         while((line = br.readLine()) != null){
             String[] temp = line.split(",");
             if(temp[0] != "") {
                 Account account = new Account(temp[0], temp[1], temp[2], temp[3]);
-                management.addUser(account);
+                manage.addUser(account);
             }
+            System.out.println("a");
         }
 
     }
