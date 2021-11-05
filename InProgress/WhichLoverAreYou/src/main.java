@@ -13,11 +13,17 @@ public class main {
         main o = new main();
         Login login = new Login();
 
-        Account loggedInUser = null;
-        loggedInUser = login.start();
+        Account loggedInUser = login.start();
 
         System.out.println(loggedInUser.getName());
 
+        ArrayList <String> questionList = new ArrayList<>();
+        Questions questions = new Questions();
+        questionList = questions.questionsIntializer();
+
+
+
     }
+
 
 }
