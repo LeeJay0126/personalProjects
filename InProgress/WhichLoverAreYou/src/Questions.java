@@ -30,4 +30,65 @@ public class Questions {
 
     }
 
+    public void result(ArrayList<String> questions){
+
+        System.out.println("For the first question you answered:");
+        switch(questions.get(0)){
+            case "1":
+                System.out.println("You chose Shiny Crystal Ball.\n" +
+                        "You are a cool-hearted lover. Often afraid to approach someone unless they approach you first. \n" +
+                        "Likely to be afraid to get hurt in a relationship and best fit with someone that gives warmth and expressive.");
+                break;
+            case "2":
+                System.out.println("You chose a big chunk of gold. \n" +
+                        "You may seem like a playboy, but deep down are loyal lover.");
+                break;
+            case "3":
+                System.out.println("You chose Pearl emitting light. \n" +
+                        "You believe in true love and are satisfied with whats given by your lover.\n");
+                break;
+            case "4":
+                System.out.println("You chose Beautiful flowers. \n" +
+                        "You think and look for things that will make who you love be happy. \n" +
+                        "If your lover is willing to understand and compromise, you will be in a healthy relationship");
+                break;
+            default:
+                System.out.println("Wrong input.");
+                break;
+        }
+
+//        "1. Go see your friend \n" +
+//                "2. Go to the date, meet your friend at night\n" +
+//                "3. Rearrange the date \n" +
+//                "4. Apologize to your friend and go to the date" +
+//                "5. Talk to your lover about this";
+
+        switch(questions.get(1)){
+            case "1":
+                System.out.println("You chose to go to see your friend \n" +
+                        "You are the type to chose friendship over love. Tend to meet your lover with a group of friends. \n" +
+                        "Type to build a strong friendship with your lover, but be aware that may not be what your lover wants from their relationship."
+                break;
+            case "2":
+                System.out.println("You chose going to the date then meeting your friend afterwards. \n" +
+                        "Friends and lover are both precious to you. You have trouble prioritizing and lack decisiveness. \n" +
+                        "Try stepping up!");
+                break;
+            case "3":
+                System.out.println("You chose Pearl emitting light. \n" +
+                        "You believe in true love and are satisfied with whats given by your lover.\n");
+                break;
+            case "4":
+                System.out.println("You chose Beautiful flowers. \n" +
+                        "You think and look for things that will make who you love be happy. \n" +
+                        "If your lover is willing to understand and compromise, you will be in a healthy relationship");
+                break;
+            default:
+                System.out.println("Wrong input.");
+                break;
+        }
+
+    }
+
+
 }
