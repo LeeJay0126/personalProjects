@@ -17,10 +17,13 @@ public class main {
 
         System.out.println(loggedInUser.getName());
 
-        ArrayList <String> questionList = new ArrayList<>();
+        System.out.println("These are some practice questions. Let's have a little test before we get into the real game.");
+
+        ArrayList <String> questionList;
         Questions questions = new Questions();
         questionList = questions.questionsIntializer();
 
+        questions.result(questionList);
 
 
     }

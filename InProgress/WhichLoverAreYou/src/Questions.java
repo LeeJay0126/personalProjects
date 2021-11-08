@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Questions {
+
+    Scanner in = new Scanner(System.in);
 
     public Questions(){
 
@@ -8,13 +11,13 @@ public class Questions {
 
     public ArrayList<String> questionsIntializer(){
         ArrayList<String> questions = new ArrayList<>();
-        String Question1 = "You helped an old man carry heavy luggage bags. You could not let him carry all his bags up the stairs so you helped him. The next day " +
+        String QuestionAsked1 = "You helped an old man carry heavy luggage bags. You could not let him carry all his bags up the stairs so you helped him. The next day " +
                 "he came to find you and offered a gift to thank you for last night's help. Which gift will you choose? \n" +
                 "1. Shiny Crystal Ball \n" +
                 "2. Big chunk of gold\n" +
                 "3. Pearl emitting light \n" +
                 "4. Beautiful Flowers";
-        String Question2 = "Tomorrow is the day! Romantic date you have been looking forward to." +
+        String QuestionAsked2 = "Tomorrow is the day! Romantic date you have been looking forward to." +
                 "Your best friend asked you to hear him out because he's going through a lot at the moment." +
                 "He insists it needs to be tomorrow. What will you do? \n" +
                 "1. Go see your friend \n" +
@@ -22,6 +25,11 @@ public class Questions {
                 "3. Rearrange the date \n" +
                 "4. Apologize to your friend and go to the date" +
                 "5. Talk to your lover about this";
+
+        System.out.println(QuestionAsked1);
+        String Question1 = in.nextLine();
+        System.out.println(QuestionAsked2);
+        String Question2 = in.nextLine();
 
         questions.add(Question1);
         questions.add(Question2);
@@ -57,17 +65,14 @@ public class Questions {
                 break;
         }
 
-//        "1. Go see your friend \n" +
-//                "2. Go to the date, meet your friend at night\n" +
-//                "3. Rearrange the date \n" +
-//                "4. Apologize to your friend and go to the date" +
-//                "5. Talk to your lover about this";
+        System.out.println("");
+        System.out.println("For the second question you answered:");
 
         switch(questions.get(1)){
             case "1":
                 System.out.println("You chose to go to see your friend \n" +
                         "You are the type to chose friendship over love. Tend to meet your lover with a group of friends. \n" +
-                        "Type to build a strong friendship with your lover, but be aware that may not be what your lover wants from their relationship."
+                        "Type to build a strong friendship with your lover, but be aware that may not be what your lover wants from their relationship.");
                 break;
             case "2":
                 System.out.println("You chose going to the date then meeting your friend afterwards. \n" +
@@ -75,13 +80,20 @@ public class Questions {
                         "Try stepping up!");
                 break;
             case "3":
-                System.out.println("You chose Pearl emitting light. \n" +
-                        "You believe in true love and are satisfied with whats given by your lover.\n");
+                System.out.println("You chose Rearranging the date. \n" +
+                        "You prioritize relationship with your lover over friends, but do respect your friend's situations too.\n" +
+                        "You take your surroundings into consideration.");
                 break;
             case "4":
-                System.out.println("You chose Beautiful flowers. \n" +
-                        "You think and look for things that will make who you love be happy. \n" +
-                        "If your lover is willing to understand and compromise, you will be in a healthy relationship");
+                System.out.println("You chose Apologizing to your friends and go to the date. \n" +
+                        "You don't take relationships seriously. Or not good with committed relationship. \n" +
+                        "Perhaps having deep conversation with your lover and getting to know your lover might worth a try.");
+                break;
+            case "5":
+                System.out.println("You chose Talking to your lover about the situation. \n" +
+                        "You love your friends and your lover." +
+                        "You are detailed, passionate person who fall for someone deeply. \n" +
+                        "It is very important for you to know passion and interest of your own before the other person. ");
                 break;
             default:
                 System.out.println("Wrong input.");
