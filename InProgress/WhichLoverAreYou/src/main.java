@@ -21,9 +21,11 @@ public class main {
 
         ArrayList <String> questionList;
         Questions questions = new Questions();
-        questionList = questions.questionsIntializer();
+        questionList = questions.PracticeQuestionsIntializer();
 
-        questions.result(questionList);
+        questions.PracticeResult(questionList);
+
+        System.out.println("Now it's time for the real game!");
 
 
     }
