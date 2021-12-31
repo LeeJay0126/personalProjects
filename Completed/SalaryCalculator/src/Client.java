@@ -23,6 +23,25 @@ public class Client implements Protocol {
     }
     public void Calculate(DataInputStream in,DataOutputStream out) throws IOException {
         Scanner fromUser = new Scanner(System.in);
+
+        int province = 0;
+
+        System.out.println("Enter the number of the province you are in. \n" +
+                "1 = BC \n" +
+                "2 = AB \n" +
+                "3 = SASKATCHEWAN \n" +
+                "4 = MANITOBA \n" +
+                "5 = ON \n" +
+                "6 = QB \n" +
+                "7 = NEW BRUNSWICK \n" +
+                "8 = NOVA SCOTIA \n" +
+                "9 = NEWFOUNDLAND \n" +
+                "10 = PRINCE EDWARD ISLAND");
+
+        province = fromUser.nextInt();
+        out.writeInt(province);
+        out.flush();
+
         System.out.println("Enter 1 if you want to know your salary and taxes based on $/hr and hours of work per week or 2 if you already know your annual salary : ");
         int choice = fromUser.nextInt();
 
