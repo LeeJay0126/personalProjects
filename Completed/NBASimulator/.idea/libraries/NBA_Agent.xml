@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="NBA_Agent">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CompletedVersion/NBA_Agent.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

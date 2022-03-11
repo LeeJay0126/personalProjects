@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="TempFolder">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TempFolder/rookies_1.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TempFolder/rookies.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TempFolder/TempPlayers_folder_V3.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
