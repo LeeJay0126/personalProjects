@@ -1,0 +1,20 @@
+header {
+    border-width: 1px;
+    border-color: black;
+}
+nav {
+    background-color: aliceblue;
+    border: 5vw;
+}
+
+nav a:link {
+    font-size: 1em;
+    margin: 10vw;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+footer {
+    font-family: sans-serif;
+    font-size: 12px;
+}
