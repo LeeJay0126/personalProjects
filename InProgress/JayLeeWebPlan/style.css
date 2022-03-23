@@ -1,17 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(253, 251, 247);
+    font-family: sans-serif;
+}
 header {
     border-width: 1px;
     border-color: black;
 }
-nav {
+header {
     background-color: aliceblue;
-    border: 5vw;
+    border-width: 3px;
+    padding: 1vw;
 }
 
-nav a:link {
+/* h1 {
+    float: left;
+} */
+
+nav a:link, nav a:visited {
     font-size: 1em;
-    margin: 10vw;
+    margin: 8vw;
     text-decoration: none;
     font-family: sans-serif;
+    color: black;
+    padding: 10px;
+    text-decoration: bold;
+    /* float:right; */
+}
+
+nav a:hover, nav a:active {
+    font-size: 1.1em;
 }
 
 footer {
