@@ -99,3 +99,39 @@ li {
     margin-left: 5%;
     margin-bottom: 10px;
 }
+
+.colors{
+    margin-bottom: 20px;
+}
+
+.colors div{
+    display: block;
+    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+.blackSQ {
+    background-color: black;
+}
+
+.blueSQ {
+    background-color: blue;
+}
+
+.redSQ{
+    background-color: red;
+}
+
+.yellowSQ{
+    background-color: yellow;
+}
+
+.greenSQ{
+    background-color: green;
+}
+
+.brownSQ{
+    background-color: brown;
+}
