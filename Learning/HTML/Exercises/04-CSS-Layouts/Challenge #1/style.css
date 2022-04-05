@@ -9,7 +9,7 @@
     border-width: 3px;
     border-color: black;
     border-style: solid;
-    width : 80%;
+    width : 800px;
     margin: auto;
     margin-top: 10%;
     margin-bottom: 10%;
@@ -138,16 +138,35 @@ li {
 }
 
 .div1 {
-    float: left;
-    width: 20%;
+    float : left;
+    display: block;
 }
 
 .div2 {
     float: left;
-    width: 20%;
+    width: 270px;
+    margin-left: 40px;
+    display: block;
 }
 
 .div3 {
     float: right;
-    width: 20%;
+    margin-left: 40px;
+    width: 240px;
+    display: block;
+}
+
+.right {
+    float: left;
+    display: block;
+}
+
+.left {
+    float: right;
+    display: block;
+}
+
+.div4 {
+    display: block;
+    clear: both;
 }
