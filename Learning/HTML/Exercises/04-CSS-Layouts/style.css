@@ -253,32 +253,40 @@ nav p {
   font-size: 18px;
 } */
 
-h1 {
-  float: left;
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-nav {
-  float: right;
+.author-box{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.clearafter::after {
-  clear: both;
-  content: "";
+.author {
+  margin: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 5px;
   display: block;
 }
 
-article {
-  width: 825px;
-  float: left;
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
 }
-
-aside {
-  width: 300px;
-  float: right;
-}
-
-footer {
-  clear: both;
-}
-
-

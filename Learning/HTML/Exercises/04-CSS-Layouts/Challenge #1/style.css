@@ -166,7 +166,8 @@ li {
     display: block;
 }
 
-.div4 {
+.div4::after {
     display: block;
     clear: both;
+    content: "";
 }
