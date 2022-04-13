@@ -2,6 +2,7 @@
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* PAGE SECTIONS */
@@ -14,7 +15,7 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 80%;
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
@@ -265,3 +266,20 @@ footer p {
 nav p {
   font-size: 18px;
 } */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+
+}
+
+.main-header {
+  grid-column: 1 / -1;
+}
+
+.aside {
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+  display: flex;
+  width: 300px;
+}

@@ -17,16 +17,11 @@ a {
     cursor: pointer;
 }
 
-/* h1 {
-    float: left;
-} */
-
 nav a:link, nav a:visited {
     text-decoration: none;
     font-family: sans-serif;
     color: black;
     text-decoration: bold;
-    /* float:right; */
 }
 
 nav a:hover, nav a:active {
