@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    header field
+*/
+
+header{
+    display: box;
+    background-color: aliceblue;
+}
+
+h1 {
+    font-family: "lato", sans-serif;
+    padding: 15px;
+}
+
+/* body */
+
+article {
+    width: 100vw;
+    background-color: antiquewhite;
+    padding: 25px;
+}
+
+h3 , h4, lable {
+    font-family: "lato", sans-serif;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+/* flexbox */
+
+.flexBox {
+    display: flex;
+    gap : 100px;
+    margin-bottom: 40px;
+}
+
+#resultButton {
+    height: 50px;
+    width: 100px;
+}
+
+.resultSection {
+
+    display: flex;
+    gap: 40px;
+
+}
+
+
+

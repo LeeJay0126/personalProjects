@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>BMI calculator</title>
+    <script src="bmi.js" defer></script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            BMI calculator
+        </h1>
+    </header>
+    <article>
+        <div class="flexBox">
+            <div class="firstPerson">
+                <h4>First Person</h4>
+                <div class="firstPersonMass">
+                    <lable>Mass (KG)</lable>
+                    <input id="firstPersonM" type="text">
+                </div>
+                <div class="firstPersonHeight">
+                    <lable>Height in Meters</lable>
+                    <input id="firstPersonH" type="text">
+                </div>
+            </div>
+
+            <div class="secondPerson">
+                <h4>Second Person</h4>
+                <div class="secondPersonMass">
+                    <lable>Mass (KG)</lable>
+                    <input id="secondPersonM" type="text">
+                </div>
+                <div class="secondtPersonHeight">
+                    <lable>Height in Meters</lable>
+                    <input id="secondPersonH" type="text">
+                </div>
+            </div>
+            <input type = "button" value = "Confirm" id = "resultButton" onclick="result();"/>
+        </div>
+
+        <div class="resultSection">
+            <h3>
+                Results
+            </h3>
+            <div id="firstPersonBMI">
+            </div>
+            <div id="secondPersonBMI">
+            </div>
+            <div id="greaterBMI">
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
