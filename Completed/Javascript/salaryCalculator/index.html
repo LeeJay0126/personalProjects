@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8"/>
+        <title>salary calculator</title>
+        <script src = "script.js" defer></script>
+    </head>
+    <body>
+        <h1>Salary Calculator</h1>
+        <article>
+
+            <h3>
+                Select your province
+            </h3>
+
+            <div class = "provinceSelector">
+                <lable for="province">Select your province: </lable>
+
+                <select name="province" class = "provinceDropDown">
+                    <option value = "Alberta">Alberta</option>
+                    <option value = "BC">British Columbia</option>
+                    <option value = "Saskatchewan">Saskatchewan</option>
+                    <option value = "Manitoba">Manitoba</option>
+                    <option value = "Ontario">Ontario</option>
+                </select>
+            </div>
+
+            <div class = "incomeSection">
+                <lable for="income">Enter your income</lable>
+                <input type="text" id = "incomeField">
+            </div>
+
+            <div class = "resultSection">
+                <h3>
+                    Results
+                </h3>
+                <div id = "results">
+                    
+                </div>
+            </div>
+        </article>
+    </body>
+</html>
