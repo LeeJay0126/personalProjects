@@ -19,7 +19,45 @@ const Alberta = [
 
 const albertaMax = 0.15;
 
+const BC = [
+    [43070, 0.0506],
+    [43071, 0.077],
+    [12760, 0.105],
+    [21193, 0.1229],
+    [42738, 0.147],
+    [64259, 0.168],
+]
 
+const BCMax = 0.205;
+
+const Saskatchewan = [
+
+    [45677, 0.105],
+    [39152, 0.125],
+
+]
+
+const SaskatchewanMax = 0.145;
+
+const Manitoba = [
+
+    [33723, 0.108],
+    [39162, 0.1275],
+
+]
+
+const ManitobaMax = 0.174;
+
+const Ontario = [
+
+    [45142, 0.0505],
+    [45143, 0.0915],
+    [59712, 0.1116],
+    [70000, 12.16]
+
+]
+
+const OntarioMax = 0.1316;
 
 function taxCalculator(income, province, maxProvince){
 
@@ -98,16 +136,16 @@ function maxProvinceSelection(selectedProvince){
             maxProvince = albertaMax;
             break;
         case "BC":
-            maxProvince = BC;
+            maxProvince = BCMax;
             break;
         case "Saskatchewan":
-            maxProvince = Saskatchewan;
+            maxProvince = SaskatchewanMax;
             break;
         case "Manitoba":
-            maxProvince = Manitoba;
+            maxProvince = ManitobaMax;
             break;
         case "Ontario":
-            maxProvince = Ontario;
+            maxProvince = OntarioMax;
             break;
         default:
             maxProvince = albertaMax;
@@ -128,10 +166,9 @@ function displayResult(){
     let federalTax = taxCalculator(income, federal, federalMax);
     let provincialTax = taxCalculator(income, selectedProvince,maxProvince);
 
-    provincialTax = Number(provincialTax.toFixed(2));
-    federalTax = Number(federalTax.toFixed(2));
+    provincialTax = Number(provincialTax).toFixed(2);
+    federalTax = Number(federalTax).toFixed(2);
     let totalTaxResult = federalTax + provincialTax;
-    console.log(totalTaxResult);
     totalTaxResult = totalTaxResult.toFixed(2);
     const calculatedSalary = (Number(income) - totalTaxResult).toFixed(2);
 
