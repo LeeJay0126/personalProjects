@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="zombie.js" defer></script>
+    <title> Zombie Escape</title>
+    <script>
+        function randomRange(min,max){
+            return Math.random()*(max-min)+min;
+        }
+        function setup(){
+            let numCircles = randomRange(45,75);
+            let circleString = "";
+
+            for(let i = 0; i < numCircles; i += 1){
+                circleString  += `<use class="zombie" href="#zombie" transform="translate(${randomRange(0,300)},${randomRange(0,300)})" fill="black" />`
+            }
+
+            document.querySelector("#zombies").innerHTML = circleString;
+        }
+
+    </script>
+</head>
+<body onload="setup()">
+    <h1>Zombie Forest</h1>
+    <svg width="300" height="300">
+        <defs>
+            <g id="zombie">
+               <circle cx="0" cy="-5" r="5"/>
+               <rect x="-5" y="0" width="10" height="10" />
+            </g>
+        </defs>
+        <g id="zombies">
+        </g>
+
+        <g id="survivor">
+            <circle id="person" cx="150" cy="150" r="10" fill="blue" />
+        </g>
+    </svg><br>
+    <label>y-slider</label><input id="sliderY" type="range" min="0" max="300" value="150" oninput="listenerY()"><br>
+    <label>x-slider</label><input id="sliderX" type="range" min="0" max="300" value="150" oninput="listenerX()"><br>
+    
+</body>
+</html>
