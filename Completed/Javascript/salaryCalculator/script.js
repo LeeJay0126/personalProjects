@@ -7,7 +7,6 @@ const federal = [
     [66083, 0.29],
     [0.33]
 ]
-
 const federalMax = 0.33;
 
 const Alberta = [
@@ -16,7 +15,6 @@ const Alberta = [
     [52488, 0.13],
     [104976, 0.14]
 ]
-
 const albertaMax = 0.15;
 
 const BC = [
@@ -27,36 +25,26 @@ const BC = [
     [42738, 0.147],
     [64259, 0.168],
 ]
-
 const BCMax = 0.205;
 
 const Saskatchewan = [
-
     [45677, 0.105],
     [39152, 0.125],
-
 ]
-
 const SaskatchewanMax = 0.145;
 
 const Manitoba = [
-
     [33723, 0.108],
     [39162, 0.1275],
-
 ]
-
 const ManitobaMax = 0.174;
 
 const Ontario = [
-
     [45142, 0.0505],
     [45143, 0.0915],
     [59712, 0.1116],
     [70000, 12.16]
-
 ]
-
 const OntarioMax = 0.1316;
 
 function taxCalculator(income, province, maxProvince){
@@ -86,6 +74,13 @@ function taxCalculator(income, province, maxProvince){
     return owedTax;
 
 }
+
+/*
+    **Must Ask Baptiste**
+    Would it be better to combine provinceSelection function and maxProvinceSelection function and have provinceBracket and maxProvince selection as a global variable?
+    Or pass it as a parameter and modify it? Would I need a pointer for this or does javascript handle this differently?
+
+*/
 
 function provinceSelection(){
 
@@ -168,8 +163,15 @@ function displayResult(){
 
     provincialTax = Number(provincialTax).toFixed(2);
     federalTax = Number(federalTax).toFixed(2);
-    let totalTaxResult = federalTax + provincialTax;
-    totalTaxResult = totalTaxResult.toFixed(2);
+    const testVar = federalTax + provincialTax;
+    console.log(testVar);
+    /*
+        I have declared federalTax and provincial tax as a number from the above code.
+        But for the calculation for totalTaxResult, when I am adding the two values again it's taking them as if they are strings.
+        why is this the case?
+    */
+    const totalTaxResult = (Number(federalTax) + Number(provincialTax)).toFixed(2);
+    console.log(provincialTax, federalTax, totalTaxResult);
     const calculatedSalary = (Number(income) - totalTaxResult).toFixed(2);
 
     document.getElementById("federalTaxResult").innerHTML = "$" + federalTax;
