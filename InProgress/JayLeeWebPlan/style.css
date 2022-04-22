@@ -4,12 +4,22 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(253, 251, 247);
     font-family: sans-serif;
 }
-header {
-    padding: 40px;
+
+.firstSection {
+
+    background-image: url(indexImg/white-wallpaper-8.jpg);
+    background-size: 100vw;
+
+}
+
+.headerContainer {
+    padding: 2vw;
     background-color: F000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 a {
     cursor: pointer;
@@ -30,23 +40,18 @@ nav a:hover, nav a:active {
 
 .navigation {
     display: flex;
-    gap: 50px;
-    font-size: 18px;
+    gap: 4vw;
+    font-size: 1.3vw;
 }
 
 /* header field */
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 .logo {
     font-family: "times new roman", "sans-serif";
     letter-spacing: 5px;
     color: black;
-    font-size: 28px;
+    font-size: 2vw;
 }
 
 .logo a:link, .logo a:visited {
@@ -68,15 +73,19 @@ footer {
 /* Body container */
 
 .container {
-    margin: 3% 0 5% 5%;
-    width: 80vw;
+    margin: 2vw;
+    margin-top: 5vw;
 }
 
 .greeting {
-    font-family: sans-serif lato;
+    font-family: serif;
+    font-weight: 700;
+    font-size: 4vw;
 }
 
-.pastelProgrammer {
-    width:10vw;
+.intro {
+
+    font-size: 1vw;
+
 }
 
