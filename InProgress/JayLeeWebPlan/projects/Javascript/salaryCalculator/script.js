@@ -168,8 +168,7 @@ function displayResult(){
 
     provincialTax = Number(provincialTax).toFixed(2);
     federalTax = Number(federalTax).toFixed(2);
-    let totalTaxResult = federalTax + provincialTax;
-    totalTaxResult = totalTaxResult.toFixed(2);
+    let totalTaxResult = (Number(federalTax) + Number(provincialTax)).toFixed(2);
     const calculatedSalary = (Number(income) - totalTaxResult).toFixed(2);
 
     document.getElementById("federalTaxResult").innerHTML = "$" + federalTax;
