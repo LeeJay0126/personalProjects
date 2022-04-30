@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>salary calculator</title>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="index.html">LeeBrothers</a>
+        <nav class="navigation">
+            <a href="projects/project.html">Projects</a>
+            <a href="profile/Profile.html">Profile</a>
+            <a href="Contact/Contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class = "container">
+
+        <h1>Salary Calculator</h1>
+        <article>
+
+            <div class="province">
+                <h3>
+                    Select your province
+                </h3>
+
+                <div class="provinceSelector">
+                    <lable for="province">Select your province: </lable>
+
+                    <select name="province" id="provinceDropDown">
+                        <option value="Alberta">Alberta</option>
+                        <option value="BC">British Columbia</option>
+                        <option value="Saskatchewan">Saskatchewan</option>
+                        <option value="Manitoba">Manitoba</option>
+                        <option value="Ontario">Ontario</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="income">
+                <div class="incomeSection">
+                    <lable for="income">Enter your income</lable>
+                    <input type="text" id="incomeField">
+                </div>
+                <div class="validator">
+                    <input type="button" id="confirmButton" value="Confirm" onclick="displayResult();">
+                </div>
+            </div>
+        </article>
+
+        <div class="resultSection">
+
+            <div id="results">
+                <h3>
+                    Results
+                </h3>
+                <div class="federalTax">
+                    <lable>Federal Tax: </lable>
+                    <div id="federalTaxResult"></div>
+                </div>
+
+                <div class="provinceTax">
+                    <lable>Provincial Tax: </lable>
+                    <div id="provincialTaxResult"></div>
+                </div>
+            </div>
+
+            <div class="finalResult">
+                <h3>Result summary</h3>
+                <div class="income">
+                    <lable>Income: </lable>
+                    <div id="incomeReminder"></div>
+                </div>
+
+                <div class="totalTax">
+                    <lable>Total Tax</lable>
+                    <div id="totalTaxResult"></div>
+                </div>
+
+                <div class="salaryCalculated">
+                    <lable>Salary after tax: </lable>
+                    <div id="afterTaxSalary"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<footer>
+    Copyright &copy; 2022 by Jay Seung Yeon Lee
+</footer>
+
+</html>

@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+
+header {
+    padding: 40px;
+    background-color: F000;
+}
+a {
+    cursor: pointer;
+}
+
+/* nav bar */
+
+nav a:link, nav a:visited {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: black;
+    text-decoration: bold;
+}
+
+nav a:hover, nav a:active {
+    opacity: 0.5;
+}
+
+.navigation {
+    display: flex;
+    gap: 50px;
+    font-size: 18px;
+}
+
+/* header field */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "times new roman", "sans-serif";
+    letter-spacing: 5px;
+    color: black;
+    font-size: 28px;
+}
+
+.logo a:link, .logo a:visited {
+    text-decoration: none;
+}
+
+.logo a:hover, .logo a:active {
+    text-decoration: none;
+}
+
+/* body */
+
+.container {
+
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+
+/* footer */
+
+footer {
+    font-family: sans-serif;
+    font-size: 10px;
+    margin: 40px;
+}
+
+/* fonts */
+
+h1, h3, lable {
+    font-family: "lato", sans-serif;
+}
+
+h1 {
+    font-size: 2.5vw;
+    margin-bottom: 3vh;
+}
+
+h3 {
+    font-size: 1.5vw;
+}
+
+lable {
+    font-size: 1.2vw;
+}
+
+/*flex and design*/
+
+article {
+    margin-bottom: 4vh;
+}
+
+.resultSection {
+    display: flex;
+    gap: 10vw;
+}
+
