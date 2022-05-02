@@ -5,14 +5,35 @@
     font-family: sans-serif;
 }
 
+.container {
+
+    display: flex;
+
+}
+
 /* Side bar */
 
 /* Side bar header field */
+
+.logo {
+    font-family: "times new roman", "sans-serif";
+    letter-spacing: 6px;
+    color: black;
+    font-size: 32px;
+    margin: 25px;
+}
+
+.salaryCalculator {
+
+    background-color: rgb(187, 187, 187);
+
+}
 
 .sideBar {
 
     border-right: 1px solid;
     width: 300px;
+    height: 100vh;
 
 }
 
@@ -52,8 +73,9 @@
     font-size: 20px;
     gap: 15px;
     padding-left: 20px;
-    padding-bottom: 30px;
-
+    padding-bottom: 20px;
+    padding-top:20px;
+    align-content: center;
 }
 
 .projectIcon {
@@ -72,9 +94,19 @@ a {
 
 /* nav bar */
 
-/* nav a:link, nav a:visited {
+.navigation a:link, .navigation a:visited {
     text-decoration: none;
     font-family: sans-serif;
     color: black;
     text-decoration: bold;
+}
+
+.navigation a:hover, .navigation a:active {
+    opacity: 0.5;
+}
+
+.navigation {
+    display: flex;
+    right: 0;
+
 }
