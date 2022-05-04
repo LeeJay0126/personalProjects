@@ -6,9 +6,7 @@
 }
 
 .container {
-
     display: flex;
-
 }
 
 /* Side bar */
@@ -34,7 +32,7 @@
     border-right: 1px solid;
     width: 300px;
     height: 100vh;
-    position: fixed;
+    /* position: fixed; */
 
 }
 
@@ -83,7 +81,6 @@
 
     width: 50px;
     height: 40px;
-
 }
 
 
@@ -106,7 +103,7 @@ a {
     opacity: 0.5;
 }
 
-.navigation {
+/* .navigation {
     font-size:1.1vw;
     align-items: center;
     width: auto;
@@ -114,7 +111,7 @@ a {
     grid-template-columns: 70vw 8vw 8vw 8vw;
     grid-template-rows: 50px;
     column-gap: 2vw;
-}
+} */
 
 .navItem1 {
     grid-column: 2/3;
@@ -124,6 +121,19 @@ a {
     grid-column: 3/4;
 }
 
-/* .mainContent{
-    display: block;
+/* main content */
+/* first div - intro */
+
+.projectIntro {
+
+    height: 600px;
+    padding: 40px;
+
+}
+/* 
+#buttonEventHandler {
+
+    width: 100px;
+    height: 100px;
+
 } */

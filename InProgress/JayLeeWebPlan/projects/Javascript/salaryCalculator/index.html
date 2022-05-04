@@ -65,16 +65,41 @@
         <div class="mainContent">
 
             <!-- Homepage Nav Bar -->
-            <div class="homepageNav">
+            <!-- <div class="homepageNav">
                 <nav class="navigation">
                     <a class="navItem navItem1" href="projects/project.html">Projects</a>
                     <a class="navItem navItem2" href="profile/Profile.html">Profile</a>
                     <a class="navItem navItem3" href="Contact/Contact.html">Contact Us</a>
                 </nav>
-            </div>
+            </div> -->
 
             <article>
-                
+                <div class = "projectIntro">
+                    <h3> Salary Calculator</h3>
+                    <label>Province</label> <Select id = provinceDropDown>
+                        <option value = "BC" selected>BC</option>
+                        <option value = "Alberta" >Alberta</option>
+                        <option value = "Saskatchewan" >Saskatchewan</option>
+                        <option value = "Manitoba" >Manitoba</option>
+                        <option value = "Ontario" >Ontario</option>
+                    </Select>
+                    <label>Income</label>
+                    <input type="text" id = "incomeField">
+
+                    <div class="results">
+                        <h5>Federal Tax</h5>
+                        <div id = "federalTaxResult"></div>
+                        <h5>Provincial Tax</h5>
+                        <div id = "provincialTaxResult"></div>
+                        <h5>Income Reminder</h5>
+                        <div id = "incomeReminder"></div>
+                        <h5>Total tax</h5>
+                        <div id = "totalTaxResult"></div>
+                        <h5>After Tax Salary</h5>
+                        <div id = "afterTaxSalary"></div>
+                    </div>
+                    <button id = "buttonEventHandler" value= "Click Me" onclick="displayResult()">Click Me</button>
+                </div>
             </article>
 
         </div>
