@@ -21,18 +21,13 @@
     margin: 25px;
 }
 
-.salaryCalculator {
-
-    background-color: rgb(187, 187, 187);
-
-}
-
 .sideBar {
 
     border-right: 1px solid;
-    width: 300px;
+    border-color: rgb(180, 180, 180);
+    width: 275px;
     height: 100vh;
-    /* position: fixed; */
+    position: fixed;
 
 }
 
@@ -60,8 +55,8 @@
 }
 .headIcon {
 
-    height: 50px;
-    width: 60px;
+    height: 40px;
+    width: 45px;
 
 }
 
@@ -69,8 +64,10 @@
 
     display: flex;
     align-items: center;
-    font-size: 20px;
-    gap: 15px;
+    font-size: 15px;
+    font-weight:bold;
+    letter-spacing: 1px;
+    gap: 25px;
     padding-left: 20px;
     padding-bottom: 20px;
     padding-top:20px;
@@ -79,8 +76,8 @@
 
 .projectIcon {
 
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 25px;
 }
 
 
@@ -103,22 +100,24 @@ a {
     opacity: 0.5;
 }
 
-/* .navigation {
+.navigation {
     font-size:1.1vw;
     align-items: center;
     width: auto;
     display: grid;
-    grid-template-columns: 70vw 8vw 8vw 8vw;
+    grid-template-columns: 275px calc(67vw - 275px) 8vw 8vw 8vw;
     grid-template-rows: 50px;
     column-gap: 2vw;
-} */
+    justify-content: center;
+    letter-spacing: 1px;
+}
 
 .navItem1 {
-    grid-column: 2/3;
+    grid-column: 3/4;
 }
 
 .navItem2 {
-    grid-column: 3/4;
+    grid-column: 4/5;
 }
 
 /* main content */
@@ -137,3 +136,57 @@ a {
     height: 100px;
 
 } */
+
+@media screen and (max-width: 1000px){
+
+    .navigation{
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (min-width: 1001px){
+
+    .navigation{
+        font-size: 0.9vw;
+    }
+
+}
+
+/** page specific css **/
+
+.salaryCalculator {
+
+    background-color: rgb(180, 180, 180);
+
+}
+
+article {
+
+    display: grid;
+    grid-column: 275px calc(100vw - 275px);
+    grid-row: auto auto auto;
+
+}
+
+.projectIntro {
+
+    grid-row: 1;
+    grid-column: 2;
+
+}
+
+.results {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#buttonEventHandler{
+
+    grid-row: 3;
+    grid-column: 2;
+
+}
+
+
+
