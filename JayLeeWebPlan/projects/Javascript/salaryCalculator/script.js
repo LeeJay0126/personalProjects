@@ -33,7 +33,7 @@ const BCMax = 0.205;
 const Saskatchewan = [
 
     [45677, 0.105],
-    [39152, 0.125],
+    [39152, 0.125]
 
 ]
 
@@ -42,7 +42,7 @@ const SaskatchewanMax = 0.145;
 const Manitoba = [
 
     [33723, 0.108],
-    [39162, 0.1275],
+    [39162, 0.1275]
 
 ]
 
@@ -90,13 +90,6 @@ function taxCalculator(income, province, maxProvince){
 function provinceSelection(){
 
     const select = document.getElementById("provinceDropDown").value;
-    // console.log(select);
-
-    // for(i = 0; i < select.options.length; i++){
-    //     if(select.options[i].value == provinces[i]){
-    //         selectedProvince = provinces[i];
-    //     }
-    // }
 
     let provinceBracket = "";
 
